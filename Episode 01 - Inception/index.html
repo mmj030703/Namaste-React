@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste React</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="root">
+        <!--* HTML Way of Writing Hello World! -->
+        <!-- <h1>Hello World!</h1> -->
+    </div>
+
+    <!--* JavaScript Way of Writing Hello World! -->
+    <!-- 
+    <script>
+        const root = document.querySelector('.root');
+        const h1 = document.createElement('h1');
+
+        h1.append(document.createTextNode('Hello World from JavaScript!'));
+
+        root.appendChild(h1);
+    </script> 
+    -->
+
+    <!--? Order of files matter so the CDN links should be included before the App.js so that these files are loaded first then App.js is loaded and can use these loaded JS files of React & ReactDOM.  -->
+    <!--* CDN Link of React & React-DOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!--* React Way of Writing Hello World! -->
+    <!-- <script>
+        const h1 = React.createElement('h1', {}, "Hello World from React!");
+        const root = ReactDOM.createRoot(document.querySelector('.root'));
+
+        root.render(h1);
+    </script> -->
+
+    <!--* React Way of Writing Hello World! (External File) -->
+    <script src="./App.js"></script>
+</body>
+</html>
+
+
+<!-- Homework -->
+<!-- 
+    1. CDN
+    2. CrossOrigin
+
+
+-->
