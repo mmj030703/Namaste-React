@@ -1,0 +1,14 @@
+.root h1 {
+    background-color: #004fff;
+}
+
+.root h2 {
+    background-color: #20dfff;
+    border: 2px solid;
+    padding: 3px 6px;
+}
+
+.parent {
+    background-color: #d3caca;
+    padding: 20px 30px;
+}
