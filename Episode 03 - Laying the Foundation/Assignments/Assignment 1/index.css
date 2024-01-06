@@ -1,0 +1,11 @@
+.root {
+    background-color: aqua;
+    padding: 20px;
+}
+
+.root * * {
+    background-color: rgb(9, 41, 30);
+    margin: 20px 0;
+    padding: .5rem;
+    color: #fff;
+}

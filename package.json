@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "This is the place where all the codes, project & notes of Namaste React 🚀  is there.",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
