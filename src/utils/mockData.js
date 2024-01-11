@@ -1,77 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//* ------------------------------------------------ Be Curious - By Akshay Saini Bhaiya -----------------------------------------------
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//& Food Ordering App
-
-//& Components (Low Level Planning)
-
-/**
- * AppLayout
- *  - Header
- *      - LogoContainer
- *          - img
- *      - NavBar
- *          - Nav Items
- *  - Body
- *      - SearchContainer
- *          - Input
- *      - RestaurantContainer
- *          - RestaurantCard
- *              - Image
- *              - Name
- *              - Cuisine
- *              - Star Rating
- *              - Estimated Delivery Time
- *  - Footer
- *      - Copyright Statement
-*/
-
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-
-const root = ReactDOM.createRoot(document.querySelector('.root'));
-
-//* In JSX, we can write comments inside {} only.
-//* Single line Comments => {/* Comment */} 
-//* Multi line Comments => 
-//*                        {/* 
-//*                           Comment1 
-//*                           Comment2
-//*                        */} 
-
-const Header = () => (
-    <header>
-        <div className='logo-container'>
-            <img alt='Logo Image' src='https://cdn.dribbble.com/users/630677/screenshots/3833541/media/201454f743f48c415a38c49419275692.jpg?resize=400x300&vertical=center' />
-            <h3>NamasteFood</h3>
-        </div>
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li><i className="fa-solid fa-cart-shopping"></i></li>
-            </ul>
-        </nav>
-    </header>
-);
-
-const RestaurantCard = (props) => {
-    const {name, cuisines, avgRating, sla, cloudinaryImageId} = props.restaurantObj.info;
-    const {deliveryTime} = sla;
-    return (
-        <div className='restaurant-card'>
-            <img alt='Restaurant Image' className='restaurant-image' src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} />
-            <h3 className='restaurant-name'>{name}</h3>
-            <p className='cuisines'>{cuisines.join(',')}</p>
-            <p className='rating'>{avgRating} Stars</p>
-            <p className='delivery-time'>{deliveryTime}min</p>
-        </div>
-    )
-};
-
-const restaurantList = [
+let restaurantList = [
     {
         "info": {
             "id": "328878",
@@ -524,89 +451,6 @@ const restaurantList = [
         },
         "cta": {
             "link": "swiggy://menu?restaurant_id=372200",
-            "text": "RESTAURANT_MENU",
-            "type": "DEEPLINK"
-        }
-    },
-    {
-        "info": {
-            "id": "243517",
-            "name": "KFC",
-            "cloudinaryImageId": "f01666ac73626461d7455d9c24005cd4",
-            "locality": "Phoenix Market City",
-            "areaName": "Saki Naka",
-            "costForTwo": "₹400 for two",
-            "cuisines": [
-                "Burgers",
-                "Biryani",
-                "American",
-                "Snacks",
-                "Fast Food"
-            ],
-            "avgRating": 4.1,
-            "parentId": "547",
-            "avgRatingString": "4.1",
-            "totalRatingsString": "1K+",
-            "sla": {
-                "deliveryTime": 30,
-                "lastMileTravel": 2.8,
-                "serviceability": "SERVICEABLE",
-                "slaString": "30 mins",
-                "lastMileTravelString": "2.8 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2024-01-07 23:00:00",
-                "opened": true
-            },
-            "badges": {
-
-            },
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "textBased": {
-
-                    },
-                    "imageBased": {
-
-                    },
-                    "textExtendedBadges": {
-
-                    }
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "₹120 OFF",
-                "subHeader": "ABOVE ₹199",
-                "discountTag": "FLAT DEAL"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {
-
-                    },
-                    "video": {
-
-                    }
-                }
-            },
-            "reviewsSummary": {
-
-            },
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {
-
-            }
-        },
-        "analytics": {
-
-        },
-        "cta": {
-            "link": "swiggy://menu?restaurant_id=243517",
             "text": "RESTAURANT_MENU",
             "type": "DEEPLINK"
         }
@@ -1239,88 +1083,6 @@ const restaurantList = [
     },
     {
         "info": {
-            "id": "48030",
-            "name": "Sahara Hotel - Kurla",
-            "cloudinaryImageId": "qhd1a0qhl4iuaiwpf5rs",
-            "locality": "Near Kalpana Cinema",
-            "areaName": "Kurla",
-            "costForTwo": "₹650 for two",
-            "cuisines": [
-                "North Indian",
-                "Chinese",
-                "Mughlai",
-                "Beverages"
-            ],
-            "avgRating": 4.2,
-            "parentId": "174631",
-            "avgRatingString": "4.2",
-            "totalRatingsString": "1K+",
-            "sla": {
-                "deliveryTime": 18,
-                "lastMileTravel": 0.7,
-                "serviceability": "SERVICEABLE",
-                "slaString": "18 mins",
-                "lastMileTravelString": "0.7 km",
-                "iconType": "ICON_TYPE_EMPTY"
-            },
-            "availability": {
-                "nextCloseTime": "2024-01-08 01:15:00",
-                "opened": true
-            },
-            "badges": {
-
-            },
-            "isOpen": true,
-            "type": "F",
-            "badgesV2": {
-                "entityBadges": {
-                    "textBased": {
-
-                    },
-                    "imageBased": {
-
-                    },
-                    "textExtendedBadges": {
-
-                    }
-                }
-            },
-            "aggregatedDiscountInfoV3": {
-                "header": "₹120 OFF",
-                "subHeader": "ABOVE ₹199",
-                "discountTag": "FLAT DEAL"
-            },
-            "differentiatedUi": {
-                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-                "differentiatedUiMediaDetails": {
-                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-                    "lottie": {
-
-                    },
-                    "video": {
-
-                    }
-                }
-            },
-            "reviewsSummary": {
-
-            },
-            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-            "restaurantOfferPresentationInfo": {
-
-            }
-        },
-        "analytics": {
-
-        },
-        "cta": {
-            "link": "swiggy://menu?restaurant_id=48030",
-            "text": "RESTAURANT_MENU",
-            "type": "DEEPLINK"
-        }
-    },
-    {
-        "info": {
             "id": "258823",
             "name": "Kwality Walls Frozen Dessert and Ice Cream Shop",
             "cloudinaryImageId": "abbrtyuih9xpwsxi0znz",
@@ -1478,43 +1240,88 @@ const restaurantList = [
             "text": "RESTAURANT_MENU",
             "type": "DEEPLINK"
         }
+    },
+    {
+        "info": {
+            "id": "27813",
+            "name": "Bhagwati Hotel",
+            "cloudinaryImageId": "p5pu4no5kwgf0pqokpkj",
+            "locality": "Kalina market santacruz east",
+            "areaName": "Santacruz East",
+            "costForTwo": "₹150 for two",
+            "cuisines": [
+                "Pav Bhaji",
+                "Indian"
+            ],
+            "avgRating": 4.6,
+            "veg": true,
+            "parentId": "2093",
+            "avgRatingString": "4.7",
+            "totalRatingsString": "10K+",
+            "sla": {
+                "deliveryTime": 17,
+                "lastMileTravel": 2.1,
+                "serviceability": "SERVICEABLE",
+                "slaString": "17 mins",
+                "lastMileTravelString": "2.1 km",
+                "iconType": "ICON_TYPE_EMPTY"
+            },
+            "availability": {
+                "nextCloseTime": "2024-01-07 23:30:00",
+                "opened": true
+            },
+            "badges": {
+
+            },
+            "isOpen": true,
+            "type": "F",
+            "badgesV2": {
+                "entityBadges": {
+                    "imageBased": {
+
+                    },
+                    "textExtendedBadges": {
+
+                    },
+                    "textBased": {
+
+                    }
+                }
+            },
+            "aggregatedDiscountInfoV3": {
+                "header": "₹120 OFF",
+                "subHeader": "ABOVE ₹199",
+                "discountTag": "FLAT DEAL"
+            },
+            "differentiatedUi": {
+                "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                "differentiatedUiMediaDetails": {
+                    "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                    "lottie": {
+
+                    },
+                    "video": {
+
+                    }
+                }
+            },
+            "reviewsSummary": {
+
+            },
+            "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+            "restaurantOfferPresentationInfo": {
+
+            }
+        },
+        "analytics": {
+
+        },
+        "cta": {
+            "link": "swiggy://menu?restaurant_id=27812",
+            "text": "RESTAURANT_MENU",
+            "type": "DEEPLINK"
+        }
     }
 ]
 
-//* For keys we should always have some unique id stuff and in case if we dont have so as a last option we can use indexes available in map, filter function.
-//* When we render one component multiple time using map, filter we should provide key without fail.  
-
-const restaurantCardInputStyles = {
-    fontSize: ".9rem"
-};
-
-const Body = () => (
-    <main>
-        <section className='body'>
-            <div className='search-container'>
-                <input type='text' placeholder='Search Restaurant' style={{fontSize: ".95rem"}} />
-            </div>  
-            <div className='restaurant-container'>
-                {restaurantList.map(restaurant => {
-                     return <RestaurantCard key={restaurant.info.id} restaurantObj={restaurant} />
-                })}
-            </div>
-        </section>
-    </main>
-);
-
-const Footer = () => (
-    <footer>
-        <p>©2024-2025 NamasteFood | All Rights Reserved</p>
-    </footer>
-);
-
-const AppLayout = () => (
-    <div className='app-layout'>
-        <Header />
-        <Body />
-        <Footer />
-    </div>
-);
-
-root.render(<AppLayout />);
+export default restaurantList;
