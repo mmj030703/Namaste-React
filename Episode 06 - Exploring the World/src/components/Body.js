@@ -7,9 +7,9 @@ const Body = () => {
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const [searchInputText, setSearchInputText] = useState("");
 
-    useEffect(() => {
+    useEffect(() => { 
         fetchData();
-    });
+    }, []);
     
     const fetchData = async () => {
         try {
