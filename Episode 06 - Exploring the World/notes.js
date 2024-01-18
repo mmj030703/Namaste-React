@@ -1,5 +1,5 @@
 /* 
- ? Episode - 05 Let's Get Hooked
+ ? Episode - 06 Exploring the World
  & In this Episode
  &  - What is Monolith & Microservices Architecture
  &  - Two Scenerios of first page load 
