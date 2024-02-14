@@ -38,10 +38,10 @@ const Header = () => {
                     <li><Link className='cursor-pointer hover:bg-gray-200 px-3 py-2 block' to="/about">About</Link></li>
                     <li><Link className='cursor-pointer hover:bg-gray-200 px-3 py-2 block' to="/contact">Contact</Link></li>
                     <li><Link className='cursor-pointer hover:bg-gray-200 px-3 py-2 block' to="/grocery">Grocery</Link></li>
-                    <li>
+                    <li data-testid="cart-icon">
                         <Link className='cursor-pointer hover:bg-gray-200 px-3 py-2 block' to="/cart">
                             <i className="fa-solid fa-cart-shopping">
-                                <span className='font-mono text-2xl'>{cartItems.length}</span>
+                                <span data-testid="cartItems" className='font-mono text-2xl'>{cartItems.length}</span>
                             </i>
                         </Link>
                     </li>

@@ -14,7 +14,7 @@ const MenuItemCard = ({ itemCardObj }) => {
     };
 
     return (
-        <div className="menu-item pt-5 pb-12 flex justify-between border-b-[1px] border-slate-300">
+        <div data-testid="menuItem" className="menu-item pt-5 pb-12 flex justify-between border-b-[1px] border-slate-300">
             <div className="menu-card-info">
                 <img className="veg-img w-4" src={VEG_ICON_IMAGE_URL} />
                 <h3 className="menu-name text-slate-700 font-semibold mt-1">{name}</h3>
